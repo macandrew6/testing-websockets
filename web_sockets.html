@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text" placeholder="Your message here" id="text">
+  <button>Send</button>
+
+  <div id="log"></div>
+  <script>
+    let sock = new WebSocket("ws://localhost:5000") 
+    
+    let log = document.getElementById('log')
+    // sock.onopen = function(e) {
+    //   setTimeout(function() {
+    //     sock.send("hi there");
+    //   }, 5000);
+    // }
+
+    sock.onmessage = function(e) {
+      console.log("message event => ", e);
+      log.innerHTML += e.data + '<br>'
+    }
+
+    document.querySelector('button').onclick = function() {
+      let text = document.getElementById('text').value
+      sock.send(text);
+    }
+  </script>
+</body>
+</html>
