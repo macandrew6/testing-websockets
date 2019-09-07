@@ -14,11 +14,6 @@
     let sock = new WebSocket("ws://localhost:5000") 
     
     let log = document.getElementById('log')
-    // sock.onopen = function(e) {
-    //   setTimeout(function() {
-    //     sock.send("hi there");
-    //   }, 5000);
-    // }
 
     sock.onmessage = function(e) {
       console.log("message event => ", e);
