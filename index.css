@@ -1,0 +1,11 @@
+div#log {
+  width:500px;
+  height: 200px;
+  margin: 0 auto;
+  border: 2px solid black;
+}
+
+div#sendCtrls {
+  width: 235px;
+  margin: 30px auto;
+}
