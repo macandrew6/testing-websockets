@@ -18,7 +18,6 @@ s.on('connection', function(ws) {
         }));
     });
     
-    // ws.send('From server: ' + message);
   });
 
   ws.on('close', function() {
