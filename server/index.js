@@ -7,6 +7,7 @@ s.on('connection', function(ws) {
 
     if(message.type === 'name') {
       ws.personName = message.data;
+      return;
     }
 
     s.clients.forEach(function e(client) {
